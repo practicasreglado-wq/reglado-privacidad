@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — Reglado RRSS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --azul:       #1B5C8E;
+      --azul-claro: #2a7ab8;
+      --azul-palido:#e8f1f8;
+      --dorado:     #b8975a;
+      --texto:      #1a1a2e;
+      --gris:       #6b7280;
+      --borde:      #d1dce8;
+      --blanco:     #ffffff;
+      --fondo:      #f7f9fc;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--fondo);
+      color: var(--texto);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* ── CABECERA ─────────────────────────────────────────── */
+    header {
+      background: var(--azul);
+      color: var(--blanco);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,.03) 40px,
+        rgba(255,255,255,.03) 80px
+      );
+    }
+    header .badge {
+      display: inline-block;
+      font-family: 'Source Serif 4', serif;
+      font-size: .75rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      border: 1px solid var(--dorado);
+      padding: .25rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -.01em;
+      line-height: 1.2;
+      margin-bottom: .6rem;
+    }
+    header p {
+      font-size: .95rem;
+      opacity: .75;
+      font-style: italic;
+    }
+
+    /* ── CONTENEDOR ───────────────────────────────────────── */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* ── AVISO RGPD ───────────────────────────────────────── */
+    .aviso-rgpd {
+      background: var(--azul-palido);
+      border-left: 4px solid var(--azul);
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 2.5rem;
+      font-size: .92rem;
+      color: var(--azul);
+    }
+
+    /* ── SECCIONES ────────────────────────────────────────── */
+    section {
+      margin-bottom: 2.8rem;
+    }
+    section + section {
+      border-top: 1px solid var(--borde);
+      padding-top: 2.8rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--azul);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.8rem;
+      height: 1.8rem;
+      background: var(--azul);
+      color: var(--blanco);
+      border-radius: 50%;
+      font-family: 'Source Serif 4', serif;
+      font-size: .8rem;
+      font-weight: 400;
+      flex-shrink: 0;
+    }
+
+    p { margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1rem;
+    }
+    ul li {
+      padding: .35rem 0 .35rem 1.4rem;
+      position: relative;
+      font-size: .97rem;
+    }
+    ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--dorado);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* ── TABLA DE DATOS ───────────────────────────────────── */
+    .tabla-datos {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .92rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .tabla-datos th {
+      background: var(--azul);
+      color: var(--blanco);
+      padding: .7rem 1rem;
+      text-align: left;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: .88rem;
+    }
+    .tabla-datos td {
+      padding: .65rem 1rem;
+      border-bottom: 1px solid var(--borde);
+      vertical-align: top;
+    }
+    .tabla-datos tr:nth-child(even) td { background: var(--azul-palido); }
+    .tabla-datos tr:last-child td { border-bottom: none; }
+
+    /* ── CONTACTO ─────────────────────────────────────────── */
+    .contacto-box {
+      background: var(--azul);
+      color: var(--blanco);
+      border-radius: 8px;
+      padding: 1.8rem 2rem;
+    }
+    .contacto-box h2 { color: var(--blanco); }
+    .contacto-box .num { background: var(--dorado); color: var(--texto); }
+    .contacto-box a { color: var(--dorado); text-decoration: none; }
+    .contacto-box a:hover { text-decoration: underline; }
+    .contacto-box ul li::before { color: rgba(255,255,255,.5); }
+
+    /* ── PIE ──────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: .8rem;
+      color: var(--gris);
+      border-top: 1px solid var(--borde);
+    }
+    footer strong { color: var(--azul); }
+
+    @media (max-width: 600px) {
+      main { padding: 2rem 1.2rem 3rem; }
+      .tabla-datos { font-size: .83rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="badge">Documento Legal</div>
+  <h1>Política de Privacidad</h1>
+  <p>Aplicación Reglado RRSS &mdash; Gestión de redes sociales</p>
+</header>
+
+<main>
+
+  <div class="aviso-rgpd">
+    <strong>Información básica sobre Protección de Datos</strong> conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <h2><span class="num">1</span> Responsable del Tratamiento</h2>
+    <table class="tabla-datos">
+      <tr><th>Campo</th><th>Dato</th></tr>
+      <tr><td>Denominación</td><td>Reglado Consultores &amp; Abogados</td></tr>
+      <tr><td>Actividad</td><td>Consultoría jurídica de Administraciones Públicas</td></tr>
+      <tr><td>Domicilio</td><td>Madrid, España</td></tr>
+      <tr><td>Correo electrónico</td><td>valentinarcos1234@gmail.com</td></tr>
+      <tr><td>Nombre de la aplicación</td><td>Reglado RRSS</td></tr>
+      <tr><td>Plataforma</td><td>Meta (Facebook / Instagram)</td></tr>
+    </table>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2><span class="num">2</span> Finalidad y Base Jurídica del Tratamiento</h2>
+    <p>La aplicación <strong>Reglado RRSS</strong> es una herramienta de uso interno destinada exclusivamente a la <strong>publicación y gestión automatizada de contenidos</strong> en las páginas y perfiles corporativos de Reglado Consultores &amp; Abogados en las plataformas de Meta (Facebook e Instagram).</p>
+    <p>Los datos tratados se limitan a los necesarios para el funcionamiento técnico de la integración con la API de Meta. En ningún caso se recaban datos de terceros ni de usuarios finales de dichas plataformas.</p>
+    <ul>
+      <li><strong>Finalidad:</strong> Automatización de la publicación de contenido corporativo en redes sociales.</li>
+      <li><strong>Base jurídica:</strong> Interés legítimo del responsable (art. 6.1.f RGPD) y ejecución de un contrato de servicios (art. 6.1.b RGPD).</li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2><span class="num">3</span> Datos Tratados</h2>
+    <p>La aplicación accede y trata exclusivamente los siguientes datos, obtenidos mediante autorización OAuth de Meta:</p>
+    <ul>
+      <li>Identificadores de página y de cuenta de Instagram Business vinculados al perfil corporativo de Reglado.</li>
+      <li>Tokens de acceso a la API de Meta necesarios para la publicación de contenidos.</li>
+      <li>Metadatos de publicaciones (fecha, formato, texto e imagen) generados internamente por el responsable del tratamiento.</li>
+    </ul>
+    <p>No se tratan datos de carácter personal de usuarios, seguidores ni terceros. La aplicación no recopila, almacena ni comparte información de ninguna persona física ajena a la organización.</p>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2><span class="num">4</span> Comunicación y Transferencia de Datos</h2>
+    <p>Los datos de acceso (tokens OAuth) son transmitidos exclusivamente a la API de Meta con el único fin de ejecutar las publicaciones autorizadas. No se realizan otras cesiones ni transferencias a terceros.</p>
+    <p>Meta procesa dichos datos en calidad de encargado del tratamiento, conforme a sus propias <a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener">políticas de privacidad y condiciones de servicio</a>.</p>
+    <p>No se realizan transferencias internacionales de datos fuera del Espacio Económico Europeo más allá de las inherentes al uso de la plataforma de Meta, que dispone de las garantías adecuadas exigidas por el RGPD.</p>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <h2><span class="num">5</span> Conservación de los Datos</h2>
+    <p>Los tokens de acceso se conservan exclusivamente durante el período necesario para el funcionamiento de la integración técnica y se renuevan o eliminan conforme a los procedimientos establecidos por Meta y por el propio sistema de automatización.</p>
+    <p>En caso de revocación de permisos o desinstalación de la aplicación, los tokens quedan automáticamente invalidados y no se conserva ningún dato de acceso.</p>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2><span class="num">6</span> Derechos de los Interesados</h2>
+    <p>En la medida en que la aplicación trate datos de personas físicas identificables vinculadas a la organización, dichas personas podrán ejercer los siguientes derechos ante el responsable del tratamiento:</p>
+    <ul>
+      <li><strong>Acceso:</strong> Conocer qué datos se tratan.</li>
+      <li><strong>Rectificación:</strong> Solicitar la corrección de datos inexactos.</li>
+      <li><strong>Supresión:</strong> Solicitar la eliminación de sus datos.</li>
+      <li><strong>Limitación:</strong> Solicitar la restricción del tratamiento.</li>
+      <li><strong>Portabilidad:</strong> Recibir sus datos en formato estructurado.</li>
+      <li><strong>Oposición:</strong> Oponerse al tratamiento basado en interés legítimo.</li>
+    </ul>
+    <p>El ejercicio de estos derechos puede realizarse mediante solicitud dirigida al correo electrónico indicado en el apartado 1. Asimismo, tiene derecho a presentar reclamación ante la <strong>Agencia Española de Protección de Datos</strong> (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).</p>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <h2><span class="num">7</span> Eliminación de Datos de Usuario</h2>
+    <p>Conforme a los requisitos de la plataforma de Meta, si en algún momento la aplicación llegase a tratar datos de usuarios finales, éstos podrán solicitar la eliminación completa de sus datos enviando una solicitud al correo electrónico del responsable indicado en el apartado 1.</p>
+    <p>La solicitud será atendida en el plazo máximo de <strong>30 días naturales</strong>, conforme a lo establecido en el artículo 12 del RGPD.</p>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <h2><span class="num">8</span> Medidas de Seguridad</h2>
+    <p>El responsable del tratamiento ha adoptado las medidas técnicas y organizativas apropiadas para garantizar un nivel de seguridad adecuado al riesgo, conforme al artículo 32 del RGPD, incluyendo:</p>
+    <ul>
+      <li>Control de acceso restringido a los tokens de la API.</li>
+      <li>Comunicaciones cifradas mediante protocolo HTTPS/TLS.</li>
+      <li>Revocación inmediata de accesos en caso de compromiso de credenciales.</li>
+    </ul>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <h2><span class="num">9</span> Modificaciones de la Política</h2>
+    <p>El responsable se reserva el derecho de actualizar la presente Política de Privacidad para adaptarla a cambios normativos, técnicos o de funcionamiento de la aplicación. La versión vigente estará siempre disponible en esta URL.</p>
+    <p><strong>Fecha de última actualización:</strong> Abril de 2026.</p>
+  </section>
+
+  <!-- 10 Contacto -->
+  <section class="contacto-box">
+    <h2><span class="num">10</span> Contacto</h2>
+    <p>Para cualquier consulta relativa al tratamiento de sus datos o al funcionamiento de la aplicación, puede dirigirse al responsable del tratamiento a través de los siguientes medios:</p>
+    <ul>
+      <li>Correo electrónico: <a href="mailto:valentinarcos1234@gmail.com">valentinarcos1234@gmail.com</a></li>
+      <li>Organización: Reglado Consultores &amp; Abogados, Madrid</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 <strong>Reglado Consultores &amp; Abogados</strong> &mdash; Todos los derechos reservados.</p>
+  <p style="margin-top:.4rem">Política de Privacidad de la aplicación <em>Reglado RRSS</em> conforme al RGPD y la LOPDGDD.</p>
+</footer>
+
+</body>
+</html>
